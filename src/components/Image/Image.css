@@ -1,0 +1,12 @@
+.imageContainer {
+    width: 20%;
+    display: block;
+    margin: auto;
+  }
+  
+  .image {
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  
