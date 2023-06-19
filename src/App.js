@@ -2,6 +2,7 @@ import Header from './components/Header/Header';
 import { BrowserRouter } from 'react-router-dom';
 import PersonCardsProvider from './store/PersonCardsProvider';
 import SysRoutes from './SysRoutes';
+import './App.css';
 
 function App() {
   return (
