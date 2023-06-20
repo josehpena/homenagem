@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { PersonCardsContext } from '../../store/PersonCardsProvider';
 import './NewPersonCard.css';
+import { parse, isValid } from 'date-fns';
 
 const NewPersonCard = () => {
   const PersonCardsCtx = useContext(PersonCardsContext);
@@ -11,8 +12,12 @@ const NewPersonCard = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data, event) => {
-    event.preventDefault();
+  const validateDate = (value) => {
+    const parsedDate = parse(value, 'dd-MM-yyyy', new Date());
+    return isValid(parsedDate);
+  };
+
+  const onSubmit = (data) => {
     PersonCardsCtx.addPersonCard(data);
   };
 
@@ -42,24 +47,33 @@ const NewPersonCard = () => {
           {errors.biography && <span className="error-message">Este campo é obrigatório.</span>}
         </div>
         <div className="form-group">
-          <label htmlFor="birthDate">Data de nascimento</label>
+          <label htmlFor="birthDate">Data de nascimento (DD-MM-AAAA)</label>
           <input
             type="text"
             id="birthDate"
             name="birthDate"
             placeholder="Data de nascimento"
-            {...register('birthDate')}
+            {...register('birthDate', { required: true, validate: validateDate })}
           />
+          {errors.birthDate && errors.birthDate.type === 'required' && (
+            <span className="error-message">Este campo é obrigatório.</span>
+          )}
+          {errors.birthDate && errors.birthDate.type === 'validate' && (
+            <span className="error-message">Data de nascimento inválida.</span>
+          )}
         </div>
         <div className="form-group">
-          <label htmlFor="deathDate">Data da morte</label>
+          <label htmlFor="deathDate">Data da morte (DD-MM-AAAA)</label>
           <input
             type="text"
             id="deathDate"
             name="deathDate"
             placeholder="Data da morte"
-            {...register('deathDate')}
+            {...register('deathDate', { validate: validateDate })}
           />
+          {errors.deathDate && errors.deathDate.type === 'validate' && (
+            <span className="error-message">Data de morte inválida.</span>
+          )}
         </div>
         <div className="form-group">
           <label htmlFor="photo">Imagem da pessoa</label>
