@@ -2,11 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 60px; /* Adicione uma margem inferior para criar espaço para o footer */
 }
 
 
 @media (max-width: 768px) {
   .PersonCard {
-    flex: 0 0 calc(50% - 20px); /* Define a largura de cada card para dispositivos menores */
+    flex-basis: calc(50% - 20px);
   }
 }
