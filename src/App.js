@@ -4,6 +4,7 @@ import PersonCardsProvider from './store/PersonCardsProvider';
 import SysRoutes from './SysRoutes';
 import './App.css';
 import UsersProvider from './components/UserProvider/UserProvider';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <PersonCardsProvider>
           <SysRoutes/>
         </PersonCardsProvider>
+        <Footer/>
         </UsersProvider>
       </BrowserRouter>
     </div>
