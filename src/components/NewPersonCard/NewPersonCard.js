@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { PersonCardsContext } from '../../store/PersonCardsProvider';
 
-const NewBook = () => {
+const NewPersonCard = () => {
 
     const PersonCardsCtx = useContext(PersonCardsContext);
     
@@ -17,4 +17,4 @@ const NewBook = () => {
     );
 }
 
-export default NewBook;
+export default NewPersonCard;
