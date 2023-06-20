@@ -5,6 +5,7 @@ import SysRoutes from './SysRoutes';
 import './App.css';
 import UsersProvider from './components/UserProvider/UserProvider';
 import Footer from './components/Footer/Footer';
+import ContactProvider from './store/ContactProvider';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
         <UsersProvider>
         <Header/>
         <PersonCardsProvider>
+        <ContactProvider>
           <SysRoutes/>
+        </ContactProvider>
         </PersonCardsProvider>
         <Footer/>
         </UsersProvider>
