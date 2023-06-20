@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import PersonCard from '../PersonCard';
+import PersonCard from '../PersonCard/PersonCard';
 import { PersonCardsContext } from '../../store/PersonCardsProvider';
 import { UsersContext } from '../UserProvider/UserProvider';
-import './PersonCards.css';
 
 const PersonCards = () => {
   const personCardsCtx = useContext(PersonCardsContext);
