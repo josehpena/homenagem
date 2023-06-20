@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { PersonCardsContext } from '../../store/PersonCardsProvider';
 import './NewPersonCard.css';
@@ -10,7 +10,10 @@ const NewPersonCard = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
+
+  const [successMessage, setSuccessMessage] = useState('');
 
   const validateDate = (value) => {
     const parsedDate = parse(value, 'dd-MM-yyyy', new Date());
@@ -19,6 +22,8 @@ const NewPersonCard = () => {
 
   const onSubmit = (data) => {
     PersonCardsCtx.addPersonCard(data);
+    reset(); // Limpa os campos do formulário após a criação do card
+    setSuccessMessage('Usuário criado com sucesso!'); // Define a mensagem de sucesso
   };
 
   return (
@@ -47,7 +52,7 @@ const NewPersonCard = () => {
           {errors.biography && <span className="error-message">Este campo é obrigatório.</span>}
         </div>
         <div className="form-group">
-          <label htmlFor="birthDate">Data de nascimento (DD-MM-AAAA)</label>
+          <label htmlFor="birthDate">Data de nascimento</label>
           <input
             type="text"
             id="birthDate"
@@ -63,7 +68,7 @@ const NewPersonCard = () => {
           )}
         </div>
         <div className="form-group">
-          <label htmlFor="deathDate">Data da morte (DD-MM-AAAA)</label>
+          <label htmlFor="deathDate">Data da morte</label>
           <input
             type="text"
             id="deathDate"
@@ -88,6 +93,7 @@ const NewPersonCard = () => {
         <button type="submit" className="submit-button">
           Adicionar nova Homenagem
         </button>
+        {successMessage && <p className="success-message">{successMessage}</p>}
       </form>
     </div>
   );
