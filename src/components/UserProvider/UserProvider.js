@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {signInWithEmailAndPassword} from 'firebase/auth';
+import {signInWithEmailAndPassword, createUserWithEmailAndPassword} from 'firebase/auth';
 import { auth } from './../../store/FirebaseConfig';
 
 export const UsersContext = React.createContext();
@@ -25,11 +25,29 @@ const UsersProvider = (props) => {
                 setAuthenticated(false);
 
             });
+    };
 
-    }
+    const createUser = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // User created
+            const user = userCredential.user;
+            console.log('Usuário criado com sucesso', user);
+            setAuthenticated(true);
+          })
+          .catch((error) => {
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
+            console.log('Problemas ao criar usuário', error);
+            setAuthenticated(false);
+          });
+      };
 
     return (
-        <UsersContext.Provider value={{ authenticated: authenticated, authUser: authUser }}>
+        <UsersContext.Provider value={{ authenticated: authenticated, authUser: authUser, createUser: createUser }}>
             {props.children}
         </UsersContext.Provider>
     )
