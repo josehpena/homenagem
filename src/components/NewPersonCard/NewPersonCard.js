@@ -12,7 +12,7 @@ const NewBook = () => {
             <input type='text' name='birthDate' placeholder='Data de nascimento' />
             <input type='text' name='deathDate' placeholder='Data da morte' />
             <input type='text' name='photo' placeholder='Imagem da pessoa' />
-            <input type='submit' value='Adicionar Livro' />
+            <input type='submit' value='Adicionar nova Homenagem' />
         </form>
     );
 }
