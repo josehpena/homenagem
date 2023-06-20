@@ -1,14 +1,12 @@
 .PersonCards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  justify-content: space-between;
 }
 
+
 @media (max-width: 768px) {
-  .PersonCards {
-    flex-direction: column;
-    align-items: center;
+  .PersonCard {
+    flex: 0 0 calc(50% - 20px); /* Define a largura de cada card para dispositivos menores */
   }
 }

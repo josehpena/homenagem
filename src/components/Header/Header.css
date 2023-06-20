@@ -15,23 +15,23 @@
 
 .Header li {
   display: inline-block;
-  margin: 20px;
+  margin-right: 10px;
 }
 
 .Header a {
   text-decoration: none;
   color: black;
+  transition: color 0.3s ease;
+}
+
+.Header a:hover,
+.Header .active {
+  color: orange;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .Header ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   .Header li {
-    margin: 10px;
+    margin: 5px;
   }
 }

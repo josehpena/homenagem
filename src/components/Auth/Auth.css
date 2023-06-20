@@ -1,0 +1,85 @@
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .AuthContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .AuthForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .AuthForm .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .AuthForm label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .AuthForm input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .AuthForm .submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .AuthForm .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .AuthForm .success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .AuthForm .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .AuthForm .toggle-button {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  .AuthForm .toggle-button:hover {
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .AuthForm {
+      max-width: 100%;
+    }
+  }
+  
