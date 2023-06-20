@@ -23,7 +23,15 @@
   color: black;
 }
 
-.Header a:hover,
-.Header a:active {
-  color: orange;
+/* Responsivo */
+@media (max-width: 768px) {
+  .Header ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Header li {
+    margin: 10px;
+  }
 }
