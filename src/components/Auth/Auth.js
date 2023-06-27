@@ -20,7 +20,7 @@ const Auth = () => {
     } else {
       // Modo de login
       UsersCtx.authUser(event);
-       setSuccessMessage('Login realizado com sucesso!');
+      setSuccessMessage('Login realizado com sucesso!');
     }
 
     event.target.email.value = '';
@@ -28,16 +28,27 @@ const Auth = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type='text' id='email' placeholder='Email' />
-        <input type='password' id='password' placeholder='Password' />
-        <input type='submit' value={createAccountMode ? 'Criar Conta' : 'Login'} />
-      </form>
-      <button onClick={toggleCreateAccountMode}>
-        {createAccountMode ? 'Login' : 'Criar Conta'}
-      </button>
-      {successMessage && <p className="success-message">{successMessage}</p>}
+    <div className="AuthContainer">
+      <div className="AuthForm">
+        <form onSubmit={handleSubmit}>
+          <h2>{createAccountMode ? 'Criar Conta' : 'Login'}</h2>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input type="text" id="email" placeholder="Email" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+          <div className="form-group">
+            <input type="submit" value={createAccountMode ? 'Criar Conta' : 'Login'} />
+          </div>
+        </form>
+        <button className="toggle-button" onClick={toggleCreateAccountMode}>
+          {createAccountMode ? 'Login' : 'Criar Conta'}
+        </button>
+        {successMessage && <p className="success-message">{successMessage}</p>}
+      </div>
     </div>
   );
 };
