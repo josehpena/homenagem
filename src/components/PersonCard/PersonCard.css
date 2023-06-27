@@ -1,5 +1,5 @@
 .PersonCard {
-  flex: 0 1 calc(25% - 20px);
+  width: 400px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
   padding: 20px;
