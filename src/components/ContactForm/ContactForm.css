@@ -1,56 +1,55 @@
 .ContactFormContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .ContactForm {
-    max-width: 400px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .ContactForm h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .ContactForm label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .ContactForm input,
-  .ContactForm textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-  
-  .ContactForm span {
-    color: red;
-    font-size: 12px;
-    margin-bottom: 5px;
-  }
-  
-  .ContactForm button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .ContactForm button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ContactForm {
+  max-width: 400px;
+  padding: 50px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ContactForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ContactForm label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ContactForm input,
+.ContactForm textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.ContactForm span {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.ContactForm button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.ContactForm button[type="submit"]:hover {
+  background-color: #45a049;
+}

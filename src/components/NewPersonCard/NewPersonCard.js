@@ -23,7 +23,7 @@ const NewPersonCard = () => {
   const onSubmit = (data) => {
     PersonCardsCtx.addPersonCard(data);
     reset(); // Limpa os campos do formulário após a criação do card
-    setSuccessMessage('Usuário criado com sucesso!'); // Define a mensagem de sucesso
+    setSuccessMessage('Homenagem criada com sucesso!'); // Define a mensagem de sucesso
   };
 
   return (
@@ -74,7 +74,7 @@ const NewPersonCard = () => {
             id="deathDate"
             name="deathDate"
             placeholder="Data da morte"
-            {...register('deathDate', { validate: validateDate })}
+            {...register('deathDate', { required: false, validate: validateDate })}
           />
           {errors.deathDate && errors.deathDate.type === 'validate' && (
             <span className="error-message">Data de morte inválida.</span>
