@@ -1,13 +1,13 @@
 .Footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
   
   .Footer .creator {
     font-weight: bold;

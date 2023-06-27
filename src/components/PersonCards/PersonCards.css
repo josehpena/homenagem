@@ -1,10 +1,9 @@
 .PersonCards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 60px; /* Adicione uma margem inferior para criar espaço para o footer */
+  justify-content: flex-start;
+  margin-bottom: 60px;
 }
-
 
 @media (max-width: 768px) {
   .PersonCard {

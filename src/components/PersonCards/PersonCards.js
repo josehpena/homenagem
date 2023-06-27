@@ -23,13 +23,21 @@ const PersonCards = () => {
     return personCard.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
+  const favoriteCards = filteredPersonCards.filter((personCard) => personCard.isFavorite);
+  const otherCards = filteredPersonCards.filter((personCard) => !personCard.isFavorite);
+
   return (
-    <div>
+    <div className="CardContainer">
       <Search onSearch={handleSearch} />
       {authenticated ? (
-        filteredPersonCards.map((personCard) => (
-          <PersonCard key={personCard.id} personCard={personCard} />
-        ))
+        <>
+          {favoriteCards.map((personCard) => (
+            <PersonCard key={personCard.id} personCard={personCard} toggleFavorite={personCardsCtx.toggleFavorite} />
+          ))}
+          {otherCards.map((personCard) => (
+            <PersonCard key={personCard.id} personCard={personCard} toggleFavorite={personCardsCtx.toggleFavorite} />
+          ))}
+        </>
       ) : (
         <p>Usuário não autenticado</p>
       )}

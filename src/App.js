@@ -2,7 +2,6 @@ import Header from './components/Header/Header';
 import { BrowserRouter } from 'react-router-dom';
 import PersonCardsProvider from './store/PersonCardsProvider';
 import SysRoutes from './SysRoutes';
-import './App.css';
 import UsersProvider from './components/UserProvider/UserProvider';
 import Footer from './components/Footer/Footer';
 import ContactProvider from './store/ContactProvider';
