@@ -9,21 +9,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.PersonCard .image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 50%;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.PersonCard .image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .PersonCard .details {
   padding: 10px;
   text-align: center;
