@@ -1,7 +1,6 @@
 .Header {
   background-color: #f5f5f5;
   padding: 20px;
-  text-align: center;
   font-size: 14px;
 }
 
@@ -10,12 +9,10 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  text-align: center;
 }
 
 .Header li {
-  display: inline-block;
-  margin-right: 10px;
+  margin-right: 30px; /* Adicione o valor desejado para aumentar o espaço */
 }
 
 .Header a {

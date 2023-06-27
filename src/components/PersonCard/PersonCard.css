@@ -1,11 +1,10 @@
 .PersonCard {
-  width: 400px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Espaçamento vertical entre os cards */
+  margin-right: 20px; /* Espaçamento horizontal entre os cards */
   background-color: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
   transition: transform 0.3s ease-in-out;
 }
 

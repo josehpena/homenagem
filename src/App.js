@@ -6,6 +6,8 @@ import UsersProvider from './components/UserProvider/UserProvider';
 import Footer from './components/Footer/Footer';
 import ContactProvider from './store/ContactProvider';
 
+import './App.css';
+
 function App() {
   return (
     <div className="App">
