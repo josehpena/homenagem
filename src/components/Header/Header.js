@@ -25,6 +25,13 @@ const Header = () => {
               </NavLink>
             </li>
           )}
+          {authenticated && (
+            <li>
+              <NavLink to="/favoritos" activeClassName="active">
+                Favoritos
+              </NavLink>
+            </li>
+          )}
           <li>
             <NavLink to="/faleConosco" activeClassName="active">
               Fale Conosco
@@ -35,7 +42,6 @@ const Header = () => {
               Login
             </NavLink>
           </li>
-          
         </ul>
       </nav>
     </header>

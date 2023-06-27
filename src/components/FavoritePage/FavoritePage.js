@@ -3,9 +3,9 @@ import PersonCard from '../PersonCard/PersonCard';
 import { PersonCardsContext } from '../../store/PersonCardsProvider';
 import { UsersContext } from '../UserProvider/UserProvider';
 import Search from '../Search/Search';
-import './PersonCards.css';
+import './FavoritePage.css';
 
-const PersonCards = () => {
+const FavoritePage = () => {
   const personCardsCtx = useContext(PersonCardsContext);
   const { authenticated } = useContext(UsersContext);
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,18 +24,13 @@ const PersonCards = () => {
   });
 
   const favoriteCards = filteredPersonCards.filter((personCard) => personCard.isFavorite);
-  const otherCards = filteredPersonCards.filter((personCard) => !personCard.isFavorite);
 
   return (
     <div className="CardContainer">
-      {authenticated ? (
-        <>
-          <Search onSearch={handleSearch} />
-      
+        {authenticated ? (
+        <> 
+            <Search onSearch={handleSearch} />
           {favoriteCards.map((personCard) => (
-            <PersonCard key={personCard.id} personCard={personCard} toggleFavorite={personCardsCtx.toggleFavorite} />
-          ))}
-          {otherCards.map((personCard) => (
             <PersonCard key={personCard.id} personCard={personCard} toggleFavorite={personCardsCtx.toggleFavorite} />
           ))}
         </>
@@ -46,4 +41,4 @@ const PersonCards = () => {
   );
 };
 
-export default PersonCards;
+export default FavoritePage;
